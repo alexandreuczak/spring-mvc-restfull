@@ -37,4 +37,24 @@ public class MainRestController {
 		return pessoaDAO.get(codigo);
 	}
 	
+	@RequestMapping(value = "/pessoas",
+			method = RequestMethod.POST,
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	public Pessoa addPessoa(Pessoa pessoa){
+		return pessoaDAO.add(pessoa);
+	}
+	
+	@RequestMapping(value = "/pessoas",
+			method = RequestMethod.PUT,
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	public Pessoa updatePessoa(Pessoa pessoa){
+		return pessoaDAO.add(pessoa);
+	}
+	
+	@RequestMapping(value = "pessoas/{codigo}",
+			method = RequestMethod.DELETE,
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	public void deletePessoa(@PathVariable("codigo") Integer codigo){
+		pessoaDAO.delete(codigo);
+	}
 }

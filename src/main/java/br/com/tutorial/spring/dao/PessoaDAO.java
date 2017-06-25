@@ -43,6 +43,10 @@ public class PessoaDAO {
 		return pessoa;
 	}
 	
+	public void delete(Integer codigo){
+		PESSOAS.remove(codigo);
+	}
+	
 	public List<Pessoa> getAll(){
 		Collection<Pessoa> pessoas = PESSOAS.values();
 		List<Pessoa> listaPessoas = new ArrayList<Pessoa>();
